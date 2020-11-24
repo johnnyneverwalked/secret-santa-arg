@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('Raleway-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}@font-face {
+    font-family: 'Raleway';
+    src: url('Raleway-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Parisienne';
+    src: url('Parisienne-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Parisienne';
+    src: url('Parisienne-Regular.ttf');
+    font-weight: bold;
+    font-style: normal;
+}

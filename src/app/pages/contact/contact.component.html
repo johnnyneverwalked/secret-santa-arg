@@ -1,0 +1,32 @@
+<div class="container py-5">
+    <div class="row">
+        <div class="col py-5">
+            <h4 class="text-white text-center divider">Contact us</h4>
+        </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+        <div class="col form-group">
+            <label for="email">Email (*):</label>
+            <input class="form-control themed" type="email" formControlName="email" id="email">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col form-group">
+            <label for="name">Name:</label>
+            <input class="form-control themed" type="text" formControlName="name" id="name">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col form-group">
+            <label for="message">Message:</label>
+            <textarea rows="5" class="form-control themed" type="message" formControlName="message" id="message"></textarea>
+        </div>
+    </div>
+        <div class="row">
+            <div class="col text-right">
+                <app-button type="submit" class="btn-outline-light" displayName="Submit"></app-button>
+            </div>
+        </div>
+    </form>
+</div>

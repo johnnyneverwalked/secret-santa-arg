@@ -1,0 +1,14 @@
+<app-unlock @fadeOut (animationEnd)="showUnlock = false" *ngIf="showUnlock"></app-unlock>
+<div class="container-fluid pt-5" *ngIf="videoUrl">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-center divider text-white"><i class="la la-pagelines"></i></h3>
+        </div>
+        <div class="col-12 text-center">
+            <iframe width="80%" height="500px" frameborder="0" allowfullscreen [src]="videoUrl"></iframe>
+        </div>
+        <div class="col-12">
+            <h3 class="text-center divider text-white caligraphy">Wisdom of the senses</h3>
+        </div>
+    </div>
+</div>

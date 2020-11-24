@@ -1,0 +1,35 @@
+<div class="container-fluid vh-100 theme-complement custom-scroller text-white p-0">
+    <app-nav-bar></app-nav-bar>
+    <div class="flex-fill theme-bg custom-scroller overflow-y-auto overflow-x-hidden">
+        <div class="container-fluid p-0" [ngStyle]="{marginTop: '58px'}">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+    <footer class="container-fluid theme-complement p-0 overflow-x-hidden">
+        <app-divider-skew [inversed]="true" [mirrored]="true"></app-divider-skew>
+        <div class="row">
+            <div class="col-12 text-center">
+
+                <h5 class="divider m-0 "><img src="assets/icons/vintage-key32.png" class="my-2" alt="logo"></h5>
+            </div>
+        </div>
+        <div class="row text-center my-5">
+            <div class="col-lg border-right border-dark col-12">
+                <h5>ABOUT</h5>
+                <p class="my-3 mx-3">
+                    If you can solve the riddle feel free to send us your answer.
+                    <br>
+                    Use the contact form for better results.
+                </p>
+            </div>
+            <div class="col-lg border-right border-dark col-12">
+                <h5>CONTACT</h5>
+                <ul class="list-unstyled">
+                    <li class="my-1"><i class="la la-envelope"></i> lockecorp@gmail.com</li>
+                    <li class="my-1"><i class="la la-comment"></i> Contact form</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</div>

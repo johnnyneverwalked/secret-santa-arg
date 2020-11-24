@@ -1,0 +1,264 @@
+body {
+    font-family: Raleway, sans-serif !important;
+    scroll-behavior: smooth;
+
+}
+
+.caligraphy {
+    font-family: Parisienne, sans-serif !important;
+}
+
+.overflow-y-auto {
+    overflow-y: auto !important;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden !important;
+}
+
+.overflow-x-auto {
+    overflow-x: auto !important;
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+
+.pointer {
+    cursor: pointer !important;
+}
+
+@for $i from 1 through 50 {
+    .font-size-#{$i} {
+        font-size: #{$i}px !important;
+    }
+    .z-index-#{$i} {
+        z-index: #{i} !important;
+    }
+}
+
+.custom-scroller {
+
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #fff !important;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: #fff !important;
+        }
+
+        &:active {
+            background-color: #fff !important;
+        }
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #000;
+        border-radius: 8px;
+    }
+}
+
+.horizontal-scrollbar {
+    padding: 2px;
+    @extend .custom-scroller;
+
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+}
+
+.hidden-scroller {
+    &::-webkit-scrollbar {
+        display: none
+    }
+}
+
+.btn {
+    &:disabled {
+        opacity: .35 !important;
+    }
+}
+
+.btn-circle {
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.btn-circle i {
+    position: relative;
+    top: -1px;
+}
+
+.btn-circle-sm {
+    width: 28px;
+    height: 28px;
+    line-height: 3528;
+    font-size: 0.9rem;
+}
+
+.border-radius {
+    border-radius: 10px;
+}
+
+.border-circle {
+    border-radius: 30px;
+}
+
+.border-radius-top {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.border-radius-bottom {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.basic-hover:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    -webkit-filter: brightness(90%);
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    transition: all .1s ease;
+}
+
+.form-control.themed {
+    background-color: #000 !important;
+    border-color: #888 !important;;
+    color: white !important;
+}
+
+.theme-bg {
+    background-color: #000 !important;
+    color: white !important;
+}
+
+.theme-main {
+    background-color: #000 !important;
+    color: white !important;
+}
+
+.theme-complement {
+    background-color: #fff !important;
+    border: none !important;
+    color: black !important;
+}
+
+
+#toast-container > div {
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: alpha(opacity=100);
+}
+
+.divider {
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .45);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &::before,
+    &::after {
+        content: '';
+        display: block;
+        height: 1px;
+        width: 30%;
+    }
+
+    &::before {
+        background: linear-gradient(to right, rgba(240, 240, 240, 0), #000);
+        margin-right: 4vh;
+    }
+
+    &::after {
+        background: linear-gradient(to left, rgba(240, 240, 240, 0), #000);
+        margin-left: 4vh;
+    }
+
+    &.text-white {
+        &::before {
+            background: linear-gradient(to right, rgba(240, 240, 240, 0), #fff);
+        }
+
+        &::after {
+            background: linear-gradient(to left, rgba(240, 240, 240, 0), #fff);
+        }
+    }
+
+}
+
+.text-entrance {
+    -webkit-animation: text-entrance 1s both;
+    animation: text-entrance 1s both;
+}
+
+@-webkit-keyframes text-entrance {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes text-entrance {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.gradient-animation {
+    background: linear-gradient(60deg, #fff, #aaa, #555, #000);
+    animation: gradient 30s ease infinite;
+    background-size: 800% 400%;
+}
+
+@-webkit-keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
+}
