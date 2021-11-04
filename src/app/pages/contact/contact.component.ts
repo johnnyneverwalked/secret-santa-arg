@@ -14,7 +14,7 @@ export class ContactComponent implements OnInit {
 
     constructor(
         private fb: FormBuilder,
-        private router: Router
+        private router: Router,
     ) {
     }
 
@@ -29,9 +29,14 @@ export class ContactComponent implements OnInit {
     submit() {
         const data = this.form.value;
         switch (this._currentLevel) {
+            case 1:
+                if (data.message?.trim().toLowerCase() === "dawn") {
+
+                }
+                break;
             case 5:
-                const validNames = ["Sofia", "sofia", "Wisdom", "wisdom", "Σοφια", "Σοφία", "σοφια", "σόφια"];
-                if (validNames.includes(data.name?.trim())) {
+                const validNames = ["sofia", "wisdom", "σοφια", "σόφια"];
+                if (validNames.includes(data.name?.trim().toLowerCase())) {
                     this.router.navigate(["/riddles", "lscheqbu"]);
                 }
                 break;

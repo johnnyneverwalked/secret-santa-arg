@@ -17,7 +17,7 @@ export class SofiaComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/H90GFYTpFqE`);
+        this.videoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/1dRiE5_Xm64`);
     }
 
 }
