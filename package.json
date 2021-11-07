@@ -5,6 +5,8 @@
         "node": "16.9.1",
         "npm": "7.24.0"
     },
+    "postinstall": "ng build --aot --prod",
+    "heroku-postbuild": "ng build --configuration=production",
     "scripts": {
         "ng": "ng",
         "start": "node backend/app.js",
