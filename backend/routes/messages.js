@@ -3,7 +3,7 @@ const {Connection} = require("../Connection");
 const {response} = require("../Response");
 
 
-router.put("/", async (req, res) => {
+router.post("/", async (req, res) => {
     try {
         const db = await Connection.open();
 
@@ -14,7 +14,7 @@ router.put("/", async (req, res) => {
                 message: req.body.message,
             });
 
-        return res.json(response.success());
+        return res.status(201).json(response.success());
     } catch (e) {
         console.error(e);
         res.status(500).json(response.error(e.message, e));

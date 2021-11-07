@@ -19,7 +19,7 @@ export class MessageService {
     }
 
     public sendMessage(email: string, name?: string, message?: string): Observable<any> {
-        return this._http.put(this._baseRoute, {email, name, message})
+        return this._http.post(this._baseRoute, {email, name, message})
             .pipe(map(res => res));
     }
 

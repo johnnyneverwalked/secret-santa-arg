@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
         const config = await db.collection("config")
             .findOne({});
 
-        return res.json(response.success(config));
+        return res.status(200).json(response.success(config));
     } catch (e) {
         console.error(e);
         res.status(500).json(response.error(e.message, e));
