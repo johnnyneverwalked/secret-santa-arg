@@ -5,8 +5,8 @@
         "node": "16.9.1",
         "npm": "7.24.0"
     },
-    "postinstall": "ng build --prod --output-path dist",
-    "heroku-postbuild": "ng build --prod --output-path dist",
+    "postinstall": "ng build --aot --configuration=production --output-path=dist",
+    "heroku-postbuild": "npm install",
     "scripts": {
         "ng": "ng",
         "start": "node backend/app.js",
