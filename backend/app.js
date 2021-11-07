@@ -21,8 +21,8 @@ app.use("/config", config);
 
 
 app.get("/", (req, res) => {
-    res.send("Hello world!");
-    // res.redirect("/index.html");
+    // res.send("Hello world!");
+    res.redirect("/index.html");
 })
 
 Connection.open();
