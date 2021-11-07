@@ -5,8 +5,6 @@
         "node": "16.9.1",
         "npm": "7.24.0"
     },
-    "postinstall": "ng build --aot --configuration=production --output-path=dist",
-    "heroku-postbuild": "npm install",
     "scripts": {
         "ng": "ng",
         "start": "node backend/app.js",
@@ -14,6 +12,8 @@
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
+        "postinstall": "ng build --aot --configuration=production --output-path=dist",
+        "heroku-postbuild": "npm install",
         "e2e": "ng e2e"
     },
     "private": true,
