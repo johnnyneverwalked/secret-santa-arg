@@ -13,7 +13,7 @@ app.use(jsonParser);
 app.use(cors({origin: "*"}));
 
 // Create link to Angular build directory
-const distDir = path.join(__dirname + "/../dist/");
+const distDir = path.join(__dirname + "/../dist/arg-site");
 app.use(express.static(distDir));
 
 app.use("/messages", messages);
