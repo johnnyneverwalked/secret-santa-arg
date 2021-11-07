@@ -47,6 +47,7 @@ export class ContactComponent implements OnInit {
                         showConfirmButton: false,
                         timer: 2000
                     });
+                    this.form.reset();
                     return;
                 }
                 Swal.fire({

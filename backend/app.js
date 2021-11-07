@@ -6,6 +6,7 @@ const path = require('path');
 require("dotenv").config({path: path.join(__dirname + "/../.env")});
 
 const {Connection} = require("./Connection");
+const reqLogger = require("./RequestLogger");
 const messages = require("./routes/messages");
 const config = require("./routes/config");
 
@@ -16,8 +17,8 @@ app.use(cors({origin: "*"}));
 const distDir = path.join(__dirname + "/../dist/arg-site");
 app.use(express.static(distDir));
 
-app.use("/messages", messages);
-app.use("/config", config);
+app.use("/messages", reqLogger.log, messages);
+app.use("/config", reqLogger.log, config);
 
 
 app.get("/", (req, res) => {
