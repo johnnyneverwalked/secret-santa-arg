@@ -3,12 +3,12 @@ import {fadeOut} from "../../../core/animations/enter-leave.animation";
 import {DomSanitizer, SafeResourceUrl} from "@angular/platform-browser";
 
 @Component({
-    selector: 'app-sofia',
-    templateUrl: './sofia.component.html',
-    styleUrls: ['./sofia.component.scss'],
+    selector: 'app-dawn',
+    templateUrl: './dawn.component.html',
+    styleUrls: ['./dawn.component.scss'],
     animations: [fadeOut]
 })
-export class SofiaComponent implements OnInit {
+export class DawnComponent implements OnInit {
 
     public showUnlock: boolean = true;
     public videoUrl: SafeResourceUrl;

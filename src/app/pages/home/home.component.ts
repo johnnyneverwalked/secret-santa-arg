@@ -1,5 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import * as parallax from 'simple-parallax-js';
+import {ConfigService} from "../../core/services/http/config.service";
 
 @Component({
     selector: 'app-home',
@@ -10,7 +11,9 @@ export class HomeComponent implements OnInit {
 
     @ViewChild('bg', {static: true}) bgImage: ElementRef;
 
-    constructor() {
+    constructor(
+        public config: ConfigService
+    ) {
     }
 
     ngOnInit(): void {

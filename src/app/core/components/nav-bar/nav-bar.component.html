@@ -1,11 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-md navbar-dark border-bottom theme-bg">
-    <a target="_self" href="assets/sound/piano.wav" download="piano.wav">
-
-        <i class="la la-music mr-1"></i>
-    </a>
+    <img class="mr-2" width="32" height="32" src="assets/icons/vintage-key-white.png">
     <a class="navbar-brand basic-hover px-1" [routerLink]="'/'">
-<!--        <img class="mr-2" width="32" height="32" src="assets/icons/vintage-key-white.png">-->
-
         <span class="text-break">Locke Corp</span>
     </a>
     <button class="navbar-toggler"
@@ -15,7 +10,7 @@
     </button>
     <div class="collapse navbar-collapse flex-grow-1 text-right" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto flex-nowrap">
-            <a class="nav-item nav-link pointer" [routerLink]="['/contact']">Contact us</a>
+            <a class="nav-item nav-link pointer glitch" data-text="Contact_us" [routerLink]="['/contact']">Contact us</a>
         </div>
     </div>
 </nav>

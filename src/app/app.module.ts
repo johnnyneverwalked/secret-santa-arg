@@ -7,6 +7,7 @@ import {DividerSkewModule} from "./core/components/divider-skew/divider-skew.mod
 import {ScrollToModule} from "@nicky-lenaers/ngx-scroll-to";
 import {UnlockModule} from "./core/components/unlock/unlock.module";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
         DividerSkewModule,
         ScrollToModule.forRoot(),
         UnlockModule,
+        HttpClientModule
     ],
     providers: [],
     bootstrap: [AppComponent]

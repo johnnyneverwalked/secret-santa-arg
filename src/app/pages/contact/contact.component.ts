@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
+import {MessageService} from "../../core/services/http/message.service";
+import Swal from "sweetalert2";
+import {ConfigService} from "../../core/services/http/config.service";
 
 @Component({
     selector: 'app-contact',
@@ -10,11 +13,12 @@ import {Router} from "@angular/router";
 export class ContactComponent implements OnInit {
 
     public form: FormGroup;
-    private _currentLevel = 5;
 
     constructor(
         private fb: FormBuilder,
         private router: Router,
+        private messageService: MessageService,
+        private config: ConfigService
     ) {
     }
 
@@ -28,21 +32,44 @@ export class ContactComponent implements OnInit {
 
     submit() {
         const data = this.form.value;
-        switch (this._currentLevel) {
-            case 1:
-                if (data.message?.trim().toLowerCase() === "dawn") {
+        this.messageService.sendMessage(data.email, data.name, data.message)
+            .subscribe(res => {
+                if (res.success) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Success",
+                        text: "Your message was sent successfully",
+                        background: "#000",
+                        customClass: {
+                            title: "text-white",
+                            popup: "border border-dark"
+                        },
+                        showConfirmButton: false,
+                        timer: 2000
+                    });
+                    return;
+                }
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: "Something went wrong",
+                    background: "#000",
+                    customClass: {
+                        title: "text-white",
+                        popup: "border border-dark"
+                    },
+                    showConfirmButton: false,
+                    timer: 2000
+                });
+            });
 
-                }
-                break;
-            case 5:
-                const validNames = ["sofia", "wisdom", "σοφια", "σόφια"];
-                if (validNames.includes(data.name?.trim().toLowerCase())) {
-                    this.router.navigate(["/riddles", "lscheqbu"]);
-                }
-                break;
+        if (data.message?.toLowerCase().trim() === "d") {
+            this.router.navigate(["/riddles", "lscheqbu"]);
         }
 
-        // send form
+        switch (this.config.config$.getValue()?.level) {
+
+        }
 
     }
 
