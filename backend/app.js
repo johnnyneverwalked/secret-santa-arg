@@ -21,10 +21,14 @@ app.use("/messages", reqLogger.log, messages);
 app.use("/config", reqLogger.log, config);
 
 
-app.get("/", (req, res) => {
-    // res.send("Hello world!");
-    res.redirect("/index.html");
-})
+// app.get("/", (req, res) => {
+//     // res.send("Hello world!");
+//     res.redirect("/index.html");
+// })
+
+app.all('*', (req, res) => {
+    res.status(200).sendFile(`/`, {root: distDir});
+});
 
 Connection.open();
 
