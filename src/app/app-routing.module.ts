@@ -15,6 +15,10 @@ const routes: Routes = [
         loadChildren: () => import("./pages/riddles/riddles.module").then(m => m.RiddlesModule)
     },
     {
+        path: "mIsHBoav",
+        loadChildren: () => import("./pages/console/console.module").then(m => m.ConsoleModule)
+    },
+    {
         path: "**",
         loadChildren: () => import("./pages/home/home.module").then(m => m.HomeModule)
     },

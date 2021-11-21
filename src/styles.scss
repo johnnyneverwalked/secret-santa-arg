@@ -32,12 +32,16 @@ body {
     cursor: pointer !important;
 }
 
+.bg-black {
+    background-color: black!important;
+}
+
 @for $i from 1 through 50 {
     .font-size-#{$i} {
         font-size: #{$i}px !important;
     }
     .z-index-#{$i} {
-        z-index: #{i} !important;
+        z-index: #{$i} !important;
     }
 }
 

@@ -1,7 +1,7 @@
 <div class="container-fluid vh-100 theme-complement custom-scroller text-white p-0">
     <app-nav-bar></app-nav-bar>
     <div class="flex-fill theme-bg custom-scroller overflow-y-auto overflow-x-hidden">
-        <div class="container-fluid p-0" [ngStyle]="{marginTop: '58px'}">
+        <div class="container-fluid p-0" [ngStyle]="{marginTop: navService.showNavBar$.getValue() ? '58px' : 0}">
             <router-outlet></router-outlet>
         </div>
     </div>

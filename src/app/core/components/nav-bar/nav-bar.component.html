@@ -1,5 +1,5 @@
-<nav class="navbar fixed-top navbar-expand-md navbar-dark border-bottom theme-bg">
-    <img class="mr-2" width="32" height="32" src="assets/icons/vintage-key-white.png">
+<nav class="navbar fixed-top navbar-expand-md navbar-dark border-bottom theme-bg" *ngIf="navService.showNavBar$.getValue()">
+    <img class="mr-2" (click)="iconClick($event)" width="32" height="32" src="assets/icons/vintage-key-white.png">
     <a class="navbar-brand basic-hover px-1" [routerLink]="'/'">
         <span class="text-break">Locke Corp</span>
     </a>

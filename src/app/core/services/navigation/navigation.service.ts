@@ -1,6 +1,6 @@
 import {Injectable, OnDestroy} from "@angular/core";
 import {ScrollToService, ScrollToConfigOptions} from "@nicky-lenaers/ngx-scroll-to";
-import {Observable, Subject} from 'rxjs';
+import {Observable, BehaviorSubject} from 'rxjs';
 
 @Injectable({
     providedIn: "root",
@@ -8,6 +8,7 @@ import {Observable, Subject} from 'rxjs';
 
 export class NavigationService {
 
+    showNavBar$ = new BehaviorSubject<boolean>(true);
 
     constructor(
         private _scrollToService: ScrollToService

@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {ConfigService} from "./core/services/http/config.service";
+import {NavigationService} from "./core/services/navigation/navigation.service";
 
 @Component({
     selector: 'app-root',
@@ -10,7 +11,8 @@ export class AppComponent {
     title = 'arg-site';
 
     constructor(
-        private configService: ConfigService
+        private configService: ConfigService,
+        public navService: NavigationService
     ) {
         configService.config()
             .subscribe(res => {
