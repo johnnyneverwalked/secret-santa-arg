@@ -64,7 +64,8 @@ export class ContactComponent implements OnInit {
                 });
             });
 
-        if (["d", "The letter d"].includes(data.message?.toLowerCase().trim())) {
+        const msg = data.message?.toLowerCase().trim() || "";
+        if (msg.includes("d")) {
             setTimeout(() => {
                 this.router.navigate(["/riddles", "lscheqbu"]);
             }, 3000);
