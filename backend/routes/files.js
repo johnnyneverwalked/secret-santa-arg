@@ -72,7 +72,7 @@ router.get("/folder/:folder", async (req, res) => {
                 for (let i = 0; i < 2; i++) {
                     contents.push(redactedStr);
                 }
-                contents = files.map(f => `${f.lastName}.txt`);
+                contents.push(...files.map(f => `${f.lastName}.txt`));
                 for (let i = 0; i < 7; i++) {
                     contents.push(redactedStr);
                 }
