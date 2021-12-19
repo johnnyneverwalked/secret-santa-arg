@@ -1,4 +1,4 @@
-<div class="position-fixed vh-100 vw-100 bg-black p-3 font-size-16 z-index-1 overflow-y-auto">
+<div class="position-fixed vh-100 vw-100 bg-black p-3 font-size-16 z-index-1 overflow-y-auto" (click)="goToInput(true)">
     <ul class="list-unstyled text-break" #consoleContainer>
         <li class="w-100" *ngFor="let line of history" [innerHTML]="line|noSanitize"></li>
         <li class="d-flex w-100 align-items-center" *ngIf="!hideInput">
@@ -7,16 +7,28 @@
             <span class="text-primary font-weight-bold">{{dir || '~'}}</span>
             <span class="mr-2">$</span>
             <div class="d-inline-block flex-fill d-flex">
-                <input #consoleInput
-                       id="consoleInput"
-                       name="asdf"
-                       autocomplete="off"
-                       (blur)="consoleInput.focus()"
-                       (keyup.arrowUp)="moveCursor(1)"
-                       (keyup.arrowDown)="moveCursor(-1)"
-                       (keyup.enter)="addLine(consoleInput.value, true); consoleInput.value = ''"
-                       type="text" class="flex-fill console-input">
+                <ng-container *ngTemplateOutlet="consoleInputTemplate"></ng-container>
+            </div>
+        </li>
+        <li class="d-flex w-100 align-items-center" *ngIf="sudoBuffer">
+            <span class="mr-2" *ngIf="!sudo.showPass">Username:</span>
+            <span class="mr-2" *ngIf="sudo.showPass">Password:</span>
+            <div class="d-inline-block flex-fill d-flex">
+                <ng-container *ngTemplateOutlet="consoleInputTemplate"></ng-container>
             </div>
         </li>
     </ul>
 </div>
+
+<ng-template #consoleInputTemplate>
+    <input #consoleInput
+           id="consoleInput"
+           name="asasfsaddf"
+           autocomplete="off"
+
+           (blur)="consoleInput.focus()"
+           (keyup.arrowUp)="moveCursor(1)"
+           (keyup.arrowDown)="moveCursor(-1)"
+           (keyup.enter)="addLine(consoleInput.value, true); consoleInput.value = ''"
+           type="{{sudo?.showPass ? 'password' : 'text'}}" class="flex-fill console-input">
+</ng-template>

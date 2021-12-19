@@ -8,6 +8,7 @@ require("dotenv").config({path: path.join(__dirname + "/../.env")});
 const {Connection} = require("./Connection");
 const reqLogger = require("./RequestLogger");
 const messages = require("./routes/messages");
+const files = require("./routes/files");
 const config = require("./routes/config");
 
 app.use(jsonParser);
@@ -18,6 +19,7 @@ const distDir = path.join(__dirname + "/../dist/");
 app.use(express.static(distDir));
 
 app.use("/messages", reqLogger.log, messages);
+app.use("/files", reqLogger.log, files);
 app.use("/config", reqLogger.log, config);
 
 
