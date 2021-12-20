@@ -13,7 +13,7 @@ import {cloneDeep} from "lodash";
 })
 export class ConsoleComponent implements OnInit, AfterViewInit, OnDestroy {
     public readonly credentials = {
-        username: "crawfamanda97",
+        username: "cliffamanda97",
         password: "Cicada3301"
     };
     public user: string = "anonymous";
